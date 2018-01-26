@@ -1,0 +1,17 @@
+    
+    func showLocationServiceNotEnabledAlert() {
+        let title = "Your Title"
+        let message = "Your Message"
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        
+        let settingsAction = UIAlertAction(title: "Settings", style: .default) { (alertAction) in
+            if let appSettings = NSURL(string: UIApplicationOpenSettingsURLString) {
+                UIApplication.shared.openURL(appSettings as URL)
+            }
+        }
+        alertController.addAction(settingsAction)
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alertController.addAction(cancelAction)
+        
+    }
